@@ -1142,6 +1142,8 @@ function updatePropertiesMenu(data) {
 	setFieldIfInactive('properties-x', properties.x);
 	setFieldIfInactive('properties-y', properties.y);
 	setFieldIfInactive('properties-z', properties.z);
+	setFieldIfInactive('properties-w', properties.w);
+
 
 	setFieldIfInactive('properties-pitch', properties.pitch);
 	setFieldIfInactive('properties-roll', properties.roll);
@@ -1450,8 +1452,8 @@ function updatePermissions(data) {
 	document.getElementById('properties-x').disabled = !permissions.properties.position;
 	document.getElementById('properties-y').disabled = !permissions.properties.position;
 	document.getElementById('properties-z').disabled = !permissions.properties.position;
-	document.getElementById('properties-place-here').disabled = !permissions.properties.position;
-	document.getElementById('properties-goto').disabled = !permissions.properties.goTo;
+	document.getElementById('properties-copy-vec3').disabled = !permissions.properties.position;
+	document.getElementById('properties-copy-vec4').disabled = !permissions.properties.goTo;
 	document.getElementById('properties-pitch').disabled = !permissions.properties.rotation;
 	document.getElementById('properties-roll').disabled = !permissions.properties.rotation;
 	document.getElementById('properties-yaw').disabled = !permissions.properties.rotation;
@@ -1836,22 +1838,21 @@ window.addEventListener('load', function() {
 		});
 	});
 
-	document.querySelector('#properties-place-here').addEventListener('click', function(event) {
-		sendMessage('placeEntityHere', {
-			handle: currentEntity()
-		}).then(resp => resp.json()).then(function(resp) {
-			document.querySelector('#properties-x').value = resp.x;
-			document.querySelector('#properties-y').value = resp.y;
-			document.querySelector('#properties-z').value = resp.z;
-			document.querySelector('#properties-pitch').value = resp.pitch;
-			document.querySelector('#properties-roll').value = resp.roll;
-			document.querySelector('#properties-yaw').value = resp.pitch;
-		});
+	document.querySelector('#properties-copy-vec3').addEventListener('click', function(event) {
+		var x = parseFloat(document.getElementById('properties-x').value).toFixed(2);
+		var y = parseFloat(document.getElementById('properties-y').value).toFixed(2);
+		var z = parseFloat(document.getElementById('properties-z').value).toFixed(2);
+
+		copyToClipboard(`vec3(${x}, ${y}, ${z})`);
 	});
 
-	document.querySelector('#properties-goto').addEventListener('click', function(event) {
-		closePropertiesMenu(true);
-		goToEntity(currentEntity())
+	document.querySelector('#properties-copy-vec4').addEventListener('click', function(event) {
+		var x = parseFloat(document.getElementById('properties-x').value).toFixed(2);
+		var y = parseFloat(document.getElementById('properties-y').value).toFixed(2);
+		var z = parseFloat(document.getElementById('properties-z').value).toFixed(2);
+		var w = parseFloat(document.getElementById('properties-w').value).toFixed(2);
+
+		copyToClipboard(`vec4(${x}, ${y}, ${z}, ${w})`);
 	});
 
 	document.querySelectorAll('.set-rotation').forEach(function(e) {
@@ -2516,13 +2517,13 @@ window.addEventListener('load', function() {
 		});
 	});
 
-	document.getElementById('copy-position').addEventListener('click', function (event) {
-		var x = parseFloat(document.getElementById('properties-x').value).toFixed(2);
-		var y = parseFloat(document.getElementById('properties-y').value).toFixed(2);
-		var z = parseFloat(document.getElementById('properties-z').value).toFixed(2);
+	// document.getElementById('copy-position').addEventListener('click', function (event) {
+	// 	var x = parseFloat(document.getElementById('properties-x').value).toFixed(2);
+	// 	var y = parseFloat(document.getElementById('properties-y').value).toFixed(2);
+	// 	var z = parseFloat(document.getElementById('properties-z').value).toFixed(2);
 
-		copyToClipboard(`vec3(${x}, ${y}, ${z})`);
-	});
+	// 	copyToClipboard(`vec3(${x}, ${y}, ${z})`);
+	// });
 
 	document.getElementById('copy-rotation').addEventListener('click', function(event) {
 		var p = document.getElementById('properties-pitch').value;

@@ -406,6 +406,7 @@ end
 function GetLiveEntityProperties(entity)
 	local model = GetEntityModel(entity)
 	local x, y, z = table.unpack(GetEntityCoords(entity))
+	local w = GetEntityHeading(entity)
 	local pitch, roll, yaw = table.unpack(GetEntityRotation(entity, 2))
 	local isPlayer = IsPedAPlayer(entity)
 	local player = isPlayer and GetPlayerFromPed(entity)
@@ -418,6 +419,7 @@ function GetLiveEntityProperties(entity)
 		x = x,
 		y = y,
 		z = z,
+		w = w,
 		pitch = pitch,
 		roll = roll,
 		yaw = yaw,
