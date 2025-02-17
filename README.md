@@ -14,7 +14,8 @@ Tool for spawning, placing, and removing entities, inspired by Menyoo's Object S
 
 # Example
 
-![Description](https://files.fivemerr.com/images/418af46f-9af4-453f-96d5-3efd8c0bf2cb.png)
+![Preview](https://raw.githubusercontent.com/TwisleOfficial/spooner/master/preview.jpg)
+
 
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/awEtylz" data-context="false" ><a href="//imgur.com/a/awEtylz"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
