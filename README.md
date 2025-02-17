@@ -14,23 +14,19 @@ Tool for spawning, placing, and removing entities, inspired by Menyoo's Object S
 
 # Example
 
-[![Spooner Example](https://i.imgur.com/HLzNYUIm.jpg)](https://imgur.com/HLzNYUI)
-
-# Requirements
-
-- [uiprompt](https://github.com/kibook/redm-uiprompt) (only required when using spooner on RedM)
+[![Spooner Example](https://files.fivemerr.com/images/418af46f-9af4-453f-96d5-3efd8c0bf2cb.png)](https://files.fivemerr.com/images/418af46f-9af4-453f-96d5-3efd8c0bf2cb)
 
 # Installation
 
 1. Place in the resources directory.
 
-2. Edit fxmanifest.lua and set the `gameName` variable to either `"gta5"` (for FiveM) or `"rdr3"` (for RedM).
+2. ~~Edit fxmanifest.lua and set the `gameName` variable to either `"gta5"` (for FiveM) or `"rdr3"` (for RedM).~~ Its already set to gta for this fork.
 
 3. Add the following to server.cfg:
 
    ```
    exec @spooner/permissions.cfg
-   start spooner
+   ensure spooner
    ```
 
    The name of the resource folder must be `spooner`, otherwise players' saved databases will not be accessible.
