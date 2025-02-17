@@ -14,7 +14,7 @@ Tool for spawning, placing, and removing entities, inspired by Menyoo's Object S
 
 # Example
 
-[![Spooner Example](https://files.fivemerr.com/images/418af46f-9af4-453f-96d5-3efd8c0bf2cb.png)](https://files.fivemerr.com/images/418af46f-9af4-453f-96d5-3efd8c0bf2cb)
+[![Spooner Example](https://imgur.com/a/awEtylz.png)](https://imgur.com/a/awEtylz)
 
 # Installation
 
