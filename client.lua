@@ -2120,18 +2120,30 @@ RegisterNUICallback('detach', function(data, cb)
 	cb({})
 end)
 
-RegisterNUICallback('setEntityHealth', function(data, cb)
-	if Permissions.properties.health and CanModifyEntity(data.handle) then
-		RequestControl(data.handle)
-		SetEntityHealth(data.handle, data.health, 0)
-	end
-	cb({})
-end)
-
 RegisterNUICallback('setEntityVisible', function(data, cb)
 	if Permissions.properties.visible and CanModifyEntity(data.handle) then
 		RequestControl(data.handle)
 		SetEntityVisible(data.handle, true)
+	end
+	cb({})
+end)
+
+RegisterNUICallback('setEntityAddHealth', function(data, cb)
+	if Permissions.properties.health and CanModifyEntity(data.handle) then
+		RequestControl(data.handle)
+
+		local newHealth = GetEntityHealth(data.handle) + data.health
+		SetEntityHealth(data.handle, newHealth)
+	end
+	cb({})
+end)
+
+RegisterNUICallback('setEntityMinusHealth', function(data, cb)
+	if Permissions.properties.health and CanModifyEntity(data.handle) then
+		RequestControl(data.handle)
+
+		local newHealth = GetEntityHealth(data.handle) - data.health
+		SetEntityHealth(data.handle, newHealth)
 	end
 	cb({})
 end)

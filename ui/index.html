@@ -313,16 +313,8 @@
 					</button>
 				</div>
 				<div class="property multiple">
-					<button id="properties-select">Select</button>
-					<button id="properties-focus">Focus</button>
-				</div>
-				<div class="property">
-					<button id="properties-add-to-db" class="add-remove-db">Add to DB</button>
-					<button id="properties-remove-from-db" class="add-remove-db">Remove from DB</button>
-				</div>
-				<div class="property">
-					<button id="properties-freeze">Freeze</button>
-					<button id="properties-unfreeze">Unfreeze</button>
+					<button id="properties-select"><i class="fa-solid fa-hand-pointer"></i> Select</button>
+					<button id="properties-focus"><i class="fa-solid fa-magnifying-glass"></i> Focus</button>
 				</div>
 				<div class="property">
 					<div class="label">Position</div>
@@ -379,49 +371,55 @@
 					</div>
 				</div>
 				<div class="property">
-					<div class="label"><i class="fa-solid fa-kit-medical"></i> Health</div>
-					<input type="number" id="properties-health" min="0" step="1">
+					<button id="properties-clone"><i class="fa-solid fa-copy"></i> Clone</button>
+				</div>
+				<div class="property">
+					<button id="properties-freeze"><i class="fa-solid fa-icicles"></i> Freeze</button>
+					<button id="properties-unfreeze"><i class="fa-solid fa-icicles"></i> Unfreeze</button>
+				</div>
+				<div class="property">
+					<button id="properties-collision-on"><i class="fa-solid fa-person-falling"></i> Collision On</button>
+					<button id="properties-collision-off"><i class="fa-solid fa-person-falling"></i> Collision Off</button>
+				</div>
+				<div class="property">
+					<button id="properties-visible"><i class="fa-solid fa-eye"></i> Visibility On</button>
+					<button id="properties-invisible"><i class="fa-solid fa-eye"></i> Visibility Off</button>
+				</div>
+				<div class="property">
+					<div class="property multiple">
+						<button id="properties-minushealth"><i class="fa-solid fa-minus"></i> 10 Health</button>
+						<button id="properties-addhealth"><i class="fa-solid fa-plus"></i> 10 Health</button>
+					</div>
 				</div>
 				<div class="property multiple">
-					<button id="properties-invincible-on">Invincibility On</button>
-					<button id="properties-invincible-off">Invincibility Off</button>
+					<button id="properties-invincible-off"><i class="fa-solid fa-shield-halved"></i> Invincibility Off</button>
+					<button id="properties-invincible-on"><i class="fa-solid fa-shield"></i> Invincibility On</button>
 				</div>
 				<div class="property">
-					<button id="properties-visible">Visibility On</button>
-					<button id="properties-invisible">Visibility Off</button>
-				</div>
-				<!-- <div class="property multiple">
-					<button id="properties-gravity-on">Gravity On</button>
-					<button id="properties-gravity-off">Gravity Off</button>
-				</div> -->
-				<div class="property">
-					<button id="properties-collision-on">Collision On</button>
-					<button id="properties-collision-off">Collision Off</button>
-				</div>
-				<div class="property">
-					<button id="properties-clone">Clone</button>
-				</div>
-				<div class="property">
-					<button id="properties-attach">Attachment Options</button>
+					<button id="properties-attach"><i class="fa-solid fa-link"></i> Attachment Options</button>
 				</div>
 				<div class="property ped-property">
-					<button id="properties-ped-options">Ped Options</button>
+					<button id="properties-ped-options"><i class="fa-solid fa-gears"></i> Ped Options</button>
 				</div>
 				<div class="property vehicle-property">
-					<button id="properties-vehicle-options">Vehicle Options</button>
+					<button id="properties-vehicle-options"><i class="fa-solid fa-car-side"></i> Vehicle Options</button>
 				</div>
 				<div class="property object-property">
-					<button id="properties-lights-options">Light Options</button>
+					<button id="properties-lights-options"><i class="fa-solid fa-lightbulb"></i> Light Options</button>
 				</div>
 				<div class="property">
-					<button id="properties-register-as-networked">Register as Networked</button>
-					<button id="properties-request-control">Request Control</button>
+					<button id="properties-register-as-networked"><i class="fa-solid fa-network-wired"></i> Register as Networked</button>
+					<button id="properties-request-control"><i class="fa-solid fa-gamepad"></i> Request Control</button>
 				</div>
 				<div class="property">
-					<button id="properties-delete">Delete</button>
+					<button id="properties-delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
+				</div>
+				<div class="property">
+					<button id="properties-add-to-db" class="add-remove-db"><i class="fa-solid fa-square-plus"></i> Add to DB</button>
+					<button id="properties-remove-from-db" class="add-remove-db"><i class="fa-solid fa-trash-can"></i> Remove from DB</button>
 				</div>
 			</div>
-			<button id="properties-menu-close-btn">Close</button>
+			<button id="properties-menu-close-btn"><i class="fa-solid fa-circle-xmark"></i> Close</button>
 		</div>
 		<div id="ped-options-menu" class="menu">
 			<div id="ped-options" class="list">

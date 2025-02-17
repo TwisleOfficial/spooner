@@ -1157,7 +1157,7 @@ function updatePropertiesMenu(data) {
 		document.querySelector('#properties-remove-from-db').style.display = 'none';
 	}
 
-	setFieldIfInactive('properties-health', properties.health);
+	// setFieldIfInactive('properties-health', properties.health);
 
 	setFieldIfInactive('properties-outfit', properties.outfit);
 
@@ -1458,7 +1458,8 @@ function updatePermissions(data) {
 	document.getElementById('properties-roll').disabled = !permissions.properties.rotation;
 	document.getElementById('properties-yaw').disabled = !permissions.properties.rotation;
 	document.getElementById('properties-reset-rotation').disabled = !permissions.properties.rotation;
-	document.getElementById('properties-health').disabled = !permissions.properties.health;
+	document.getElementById('properties-addhealth').disabled = !permissions.properties.health;
+	document.getElementById('properties-minushealth').disabled = !permissions.properties.health;
 	document.getElementById('properties-invincible-on').disabled = !permissions.properties.invincible;
 	document.getElementById('properties-invincible-off').disabled = !permissions.properties.invincible;
 	document.getElementById('properties-visible').disabled = !permissions.properties.visible;
@@ -2059,10 +2060,17 @@ window.addEventListener('load', function() {
 		});
 	}));
 
-	document.querySelector('#properties-health').addEventListener('input', function(event) {
-		sendMessage('setEntityHealth', {
+	document.querySelector('#properties-addhealth').addEventListener('click', function(event) {
+		sendMessage('setEntityAddHealth', {
 			handle: currentEntity(),
-			health: parseInt(this.value)
+			health: parseInt(10)
+		});
+	});
+	
+	document.querySelector('#properties-minushealth').addEventListener('click', function (event) {
+		sendMessage('setEntityMinusHealth', {
+			handle: currentEntity(),
+			health: parseInt(10)
 		});
 	});
 
