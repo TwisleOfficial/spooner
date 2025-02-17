@@ -2516,12 +2516,12 @@ window.addEventListener('load', function() {
 		});
 	});
 
-	document.getElementById('copy-position').addEventListener('click', function(event) {
-		var x = document.getElementById('properties-x').value;
-		var y = document.getElementById('properties-y').value;
-		var z = document.getElementById('properties-z').value;
+	document.getElementById('copy-position').addEventListener('click', function (event) {
+		var x = parseFloat(document.getElementById('properties-x').value).toFixed(2);
+		var y = parseFloat(document.getElementById('properties-y').value).toFixed(2);
+		var z = parseFloat(document.getElementById('properties-z').value).toFixed(2);
 
-		copyToClipboard(x + ', ' + y + ', ' + z)
+		copyToClipboard(`vec3(${x}, ${y}, ${z})`);
 	});
 
 	document.getElementById('copy-rotation').addEventListener('click', function(event) {
