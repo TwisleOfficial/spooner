@@ -1,10 +1,10 @@
 <html>
 	<head>
 		<title>Spooner</title>
-		<script src="https://kit.fontawesome.com/5537a772c3.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="gta5.css">
 		<link rel="stylesheet" href="rdr3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<script src="script.js"></script>
 	</head>
 	<body>
@@ -350,8 +350,8 @@
 					</div>
 				</div>
 				<div class="property multiple">
-					<button id="properties-copy-vec3">Vector3</button>
-					<button id="properties-copy-vec4">Vector4</button>
+					<button id="properties-copy-vec3"><i class="fa-solid fa-clipboard"></i> Vector3</button>
+					<button id="properties-copy-vec4"><i class="fa-solid fa-clipboard"></i> Vector4</button>
 				</div>
 				<div class="property">
 					<div class="label">Rotation</div>
@@ -372,16 +372,14 @@
 							<div class="input-label">Yaw</div>
 							<input type="number" class="set-rotation rotate-input" id="properties-yaw" min="-359" max="359" step="1">
 						</div>
-						<button id="copy-rotation" class="copy-button">
-							<i class="fas fa-clipboard"></i>
-						</button>
+					</div>
+					<div class="property multiple">
+						<button id="copy-rotation"><i class="fas fa-clipboard"></i> Copy Rotation</button>
+						<button id="properties-reset-rotation"><i class="fa-solid fa-arrows-rotate"></i> Reset Rotation</button>
 					</div>
 				</div>
 				<div class="property">
-					<button id="properties-reset-rotation">Reset Rotation</button>
-				</div>
-				<div class="property">
-					<div class="label">Health</div>
+					<div class="label"><i class="fa-solid fa-kit-medical"></i> Health</div>
 					<input type="number" id="properties-health" min="0" step="1">
 				</div>
 				<div class="property multiple">
